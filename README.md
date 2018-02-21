@@ -20,7 +20,7 @@ extra_hosts:
  \- "orderer.example.come:{Central HOST IP}”
 
 4. Go to Peer2/fabric-dev-servers directory and replace the central host IP under channel creation command. 
-# Create the channel
+\# Create the channel
 docker exec peer2.org1.example.com peer channel fetch config -o {Central HOST IP} -c composerchannel
 
 5. start-fabric-Peer2.sh
