@@ -7,19 +7,20 @@ https://hyperledger.github.io/composer/installing/installing-prereqs.html
 
 
 On the central host:
-curl -O https://github.com/lalbsah/blockchain/raw/master/Central.zip
+1. Download https://github.com/lalbsah/blockchain/raw/master/Central.zip
+2. Unzip Central.zip
+3. Go to Central/fabric-dev-servers directory
+4. Run startFabric.sh
 
 On The peer node:
-curl -O https://github.com/lalbsah/blockchain/raw/master/Peer2.zip
-
-
-Change needed on the peer node:
-1. docker-composer-Peer2.yml - Replace the IP address with your central host IP
+1. Download https://github.com/lalbsah/blockchain/raw/master/Peer2.zip
+2. Unzip Peer2.zip
+3. Go to Peer2/fabric-dev-servers/composer directory to make some changes to docker-composer-Peer2.yml and replace the IP address with your central host IP
 extra_hosts:
  \- "orderer.example.come:{Central HOST IP}”
 
-2. Replace the central host IP under channel creation command. 
+4. Go to Peer2/fabric-dev-servers directory and replace the central host IP under channel creation command. 
 # Create the channel
 docker exec peer2.org1.example.com peer channel fetch config -o {Central HOST IP} -c composerchannel
 
-3. start-fabric-Peer2.sh
+5. start-fabric-Peer2.sh
